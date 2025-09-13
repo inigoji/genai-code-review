@@ -11,10 +11,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy all the source code to the working directory
-COPY . .
+COPY . /app
 
 # Add the src directory to the PYTHONPATH
 ENV PYTHONPATH="${PYTHONPATH}:/app/src"
 
 # Set the command to execute the main Python script
-CMD ["python", "src/main.py"]
+CMD ["python", "/app/src/main.py"]
